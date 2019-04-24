@@ -1,10 +1,10 @@
 # Starter pipeline
 - task: BuildSSIS@1
   inputs:
-    solnPath: 'https://github.com/HimaUddaraju/TestingETL/Testing_SSIS_DevOps.sln'
-    solnConfigName: 'TestingSSIS'
-    projPath: 'https://github.com/HimaUddaraju/TestingETL/tree/master/Testing_SSIS_Devops/Testing_SSIS_DevOps.dtproj'
-    projConfigName: 'TestingSSISProj'
+    solnPath: 'HimaUddaraju/TestingETL/Testing_SSIS_DevOps.sln'
+    solnConfigName: 'SSIS_Solution_File'
+    projPath: 'HimaUddaraju/TestingETL/tree/master/Testing_SSIS_Devops/Testing_SSIS_DevOps.dtproj'
+    projConfigName: 'SSIS_Proj_File'
     cmdSwitch: 'build'
 - task: CopyFiles@2
       inputs:
