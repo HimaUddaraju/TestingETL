@@ -1,4 +1,12 @@
 # Starter pipeline
+- task: DeploySSIS@1
+  inputs:
+    ProjectFilePath: '**\*.ispac'
+    FolderName: 'Testing_SSIS'
+    FolderDescription: 'Testing'
+    ServerName: 'inforack.database.windows.net'
+    integratedSecurity: 'connectionString'
+    customConnectionString: 'Data Source=inforack.database.windows.net;User ID=Hima;Initial Catalog=Inforack_Test;Provider=SQLOLEDB.1;Application Name=SSIS-ImportDummyData-{2EFB403B-79F4-46FB-91EF-2B897AB5AAD5}inforack.database.windows.net.Inforack_Test.Hima;Auto Translate=False;'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
