@@ -15,13 +15,12 @@ pool:
 
 steps:
   # Starter pipeline
-- task: BuildSSIS@1
+- task: MSBuild@1
   inputs:
-    solnPath: 'HimaUddaraju/TestingETL/Testing_SSIS_DevOps.sln'
-    solnConfigName: 'SSIS_Solution_File'
-    projPath: 'HimaUddaraju/TestingETL/tree/master/Testing_SSIS_Devops/Testing_SSIS_DevOps.dtproj'
-    projConfigName: 'SSIS_Proj_File'
-    cmdSwitch: 'build'
+    solution: 'HimaUddaraju/TestingETL/tree/master/Testing_SSIS_Devops/Testing_SSIS_DevOps.dtproj'
+    msbuildLocationMethod: 'location'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 - task: CopyFiles@2
   inputs:
