@@ -1,4 +1,3 @@
-
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -6,44 +5,10 @@
 trigger:
 - master
 
-pool:
-variables:
-  buildConfiguration: 'Build'
-  buildPlatform: 'anycpu'
-
-
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+workspace:
+  clean: all
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-  # Starter pipeline
-- task: BuildSSIS@1
-  inputs:
-    solnPath: 'HimaUddaraju/TestingETL/Testing_SSIS_DevOps.sln'
-    solnConfigName: 'SSIS_Solution_File'
-    projPath: 'HimaUddaraju/TestingETL/tree/master/Testing_SSIS_Devops/Testing_SSIS_DevOps.dtproj'
-    projConfigName: 'SSIS_Proj_File'
-    cmdSwitch: 'build'
-
-- task: CopyFiles@2
-  inputs:
-    Contents: '**/*.ispac'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    ArtifactName: 'drop'
-
-
   # Starter pipeline
 - task: BuildSSIS@1
   inputs:
