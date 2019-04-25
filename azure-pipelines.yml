@@ -8,6 +8,12 @@ trigger:
 workspace:
   clean: all
 
+pool:
+  name: 'Continuous Integration'
+  demands: 
+  - msbuild
+  - visualstudio
+
 steps:
   # Starter pipeline
 - task: BuildSSIS@1
