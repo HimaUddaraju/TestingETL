@@ -9,7 +9,6 @@ workspace:
   clean: all
 
 pool:
-  name: 'Continuous Integration'
   demands: 
   - msbuild
   - visualstudio
